@@ -76,4 +76,8 @@
 # 2.5 useNetwork
 1> navigator가 online 또는 offline이 되는걸 막아주는 것.
 2> network 상태가 바뀔 때마다 function을 부르는 hook
-3>
+
+# 2.6 useScroll
+1> 유저가 스크롤 해서 무언가를 지나쳤을 때, 색상을 바꾸거나 무엇이든지 할 필요가 있을 때 사용하는 hook
+2> style={{ height: "1000vh"}} => 스크롤을 하게끔 화면 구성
+3> console.log({"y", window.scrollY, "x", window.scrollX});
