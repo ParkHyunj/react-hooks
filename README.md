@@ -81,3 +81,6 @@
 1> 유저가 스크롤 해서 무언가를 지나쳤을 때, 색상을 바꾸거나 무엇이든지 할 필요가 있을 때 사용하는 hook
 2> style={{ height: "1000vh"}} => 스크롤을 하게끔 화면 구성
 3> console.log({"y", window.scrollY, "x", window.scrollX});
+
+# 2.7 useFullscreen
+1> 버튼을 눌렀을 때, 해당 이미지를 전체 화면으로 전환시키는 hook
