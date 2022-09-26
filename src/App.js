@@ -1,34 +1,40 @@
 import React, { useState } from "react";
 import './App.css';
 
-const useInput = (initialValue, validator) => {
-  const [ value, setValue ] = useState(initialValue);
-  const onChange = event => {
-    const{
-      target: { value }
-    } = event;
-    let willUpdate = true;
-    if(typeof validator ==="fnction"){
-      willUpdate = validator(value);
-    }
-    // validator의 타입이 함수면 willUpdate에 validator의 결과를 업로드한다.
-    if(willUpdate){
-      setValue(value);
-    }
+const content = [
+  {
+    tab: "Section 1",
+    content: "I'm the content of the Section 1"
+  },
+  {
+    tab: "Section 2",
+    content: "I'm the content of the Section 2"
+  }
+];
+
+const useTabs = (initialTab, allTabs) => {
+  const [currentIndex, setcurrentIndex] = useState(initialTab);
+  if (!allTabs || !Array.isArray(allTabs)) {
+  return;
+  }
+  // 배열이 아닐 때, return하는 것이다.
+  return {  
+    currentItem : allTabs[currentIndex],
+    changeItem : setcurrentIndex
   };
-  return { value, onChange };
-};
+  };
 
 function App() {
 
-  const maxLen = (value) => value.length <= 10;
-  // 여기서, validator -> value -> maxLen이다.
-  const name = useInput("Mr.", maxLen);
-
+  const { currentItem, changeItem } = useTabs(1, content);
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <input placeholder="Name" value={name.value} onChange={name.onChange} />
+      {content.map((section, index) => ( 
+        <button onClick={() => changeItem(index)}>
+            {section.tab}
+        </button>
+      ))}
+      <div>{currentItem.content}</div> 
     </div>
   );
 }

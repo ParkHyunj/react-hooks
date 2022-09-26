@@ -14,8 +14,9 @@
 3> value={name.value} onChange={name.onChange} => {...name}으로 나타낼 수 있다.
 4> 독립된 함수 한 개를 만들어서 useState로 매개체 역할
 
-# 1.2 useInput(part 2)
-1>
-2>
-#>
-4>
+# 1.3 useTabs
+1> section 1, 2를 눌렀을 때 각각의 내용이 나오게끔 구현
+2> !는 '아니다', ||는 '또는' 
+3> initialTab은 usetTabs -> useState -> currentIndex
+4> setcurrentIndex -> changeItem
+5> allTabs는 currentItem으로
