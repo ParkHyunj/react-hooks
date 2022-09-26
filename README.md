@@ -63,3 +63,8 @@
 # 2.3 usePreventLeave
 1> 보통 웹사이트에서 window 창을 닫을 때, "아직 저장하지 않았다"라고 창이 뜨게끔 구현.
 2> beforeunload는 window가 닫히기 전에 function이 실행되는걸 허락한다.
+
+# 2.4 useBeforeLeave
+1> 탭을 닫을때 실행되는 function
+2> useEffect에 dependency에 빈 배열 [] 을 넣으면 mount되고 나서 한 번만 실행이 됩니다.
+3> 마우스가 화면에서 벗어나면 생기는 이벤트 구현

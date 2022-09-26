@@ -1,22 +1,32 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import './App.css';
-const usePreventLeave = () => {
-  const listener = (event) => {
-    event.preventDefault();
-    event.returnValue = "";
+
+const useBeforeLeave = (onBefore) => {
+  const handle = (event) => {
+    const { clientY } = event;
+    if (clientY <= 0) {
+      onBefore();
+    }
   };
-  const enablePrevent = () => window.addEventListener("beforeunload", listener);
-  const disablePrevent = () => window.addEventListener("beforeunload", listener);
-  return { enablePrevent, disablePrevent };
+  useEffect(() => {
+    if (typeof onBefore === "function") { // << 이 처럼 useEffect 안에 if 문을 아래처럼 넣어보세요
+      document.addEventListener("mouseleave", handle);
+      return () => document.removeEventListener("mouseleave", handle);
+    } else {
+      return;
+    }
+  }, []);
 };
 
 function App() {
-  const { enablePrevent, disablePrevent } = usePreventLeave();
- 
+
+  const begForLife = () => console.log("Pls don't leave");
+  useBeforeLeave(begForLife);
+
+
   return (
     <div className="App">
-      <button onClick={enablePrevent}>Protect</button>
-      <button onClick={disablePrevent}>Unprotect</button>
+      <h1>hello</h1>
     </div>
   );
 }
