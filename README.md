@@ -26,3 +26,9 @@
 1> useEffect()는 componentDidMount(), componentDidUpdate(), componentWillUnmount() 의 역할을 한다.
 2> useEffect()의 1번째 인자는 function으로서의 effct ==> componentDidMount()와 기능이 비슷함)
 3> useEffect()의 2번쨰 인자는 deps(dependency)으로써, useEffect()가 deps리스트에 있는 값이 변할 때만 실행되게 함 ==> componentDidUpdate()와 기능이 비슷함
+
+# 2.1 useTitle
+1> 문서의 제목을 업데이트 시켜주는 hook
+2> setTimeout(() => titleUpdater("Home"), 5000);
+    => 5초 후에 loading에서 Home으로 제목이 바뀐다.
+3> titleUpdater에는 setTitle()이라는 함수가 담겨있다.
