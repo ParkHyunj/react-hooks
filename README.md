@@ -51,3 +51,11 @@
     => 개발자 도구에서 console 창 누르면 이런 오류 생김 
     => 오류 발생 이유: mount가 너무 빨리되서 potato.current가 극 초반에 존재하지 않아서 / console.log 해보면 초반에 undefined가 뜨다가 제대로 잡힌다.
 5> 글씨를 눌렀을 때, say hello가 나오게 구현.
+
+# 2.3 useConfirm 
+1> 이 두개는 useEffect와 useState를 사용하지 않기 때문에, hook은 아니다.
+2> useConfirm은 사용자가 무언가를 하기전에 확인하는 건데, 예를 들어, 사용자가 버튼을 클릭하는 작업을 하면 이벤트를 실행하기 전에 메세지를 보여주고 싶을 때 사용(정말 그렇게 하고 싶니? 등등)
+3>  src\App.js
+    Line 9:8:  Unexpected use of 'confirm'  no-restricted-globals
+    Search for the keywords to learn more about each error.
+    => confirm(message)-> window.confirm(message)으로 변경하면 됨.

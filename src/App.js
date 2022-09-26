@@ -1,39 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import './App.css';
 
-const useClick = (onClick) => {
-  const ref = useRef();
-  
-  useEffect(() => {
-  // 1. 변수를 안에서 copy하지 않으면 warning (ref가 unmount 시점에 null이 된다.)
-  const element = ref.current;
-  if (element) {
-  // 'click' is keyword
-  element.addEventListener('click', onClick);
+const useConfirm = (message, callback, rejection) => {
+  if(typeof callback !==  "function") {
+    return;
   }
-  // ComponentWillUnmount()
-  return () => {
-  if (element) {
-  element.removeEventListener('click', onClick);
-  }
+  const confirmAction = () => {
+    if(window.confirm(message)){
+      callback();
+    } else {
+      rejection();
+    }
   };
-  }, [onClick]);
+  return confirmAction;
+};
   
-  return ref.current;
-  };
-  
-//  useClick을 사용해서 useRef()를 만들고, 같은 reference를 return 해줬다.
-
-
 function App() {
 
-  const sayHello = () => console.log("say hello");
-  const title = useClick(sayHello);
-  
+  const deleteWorld = () => console.log("Deleting the world...");
+  const abort = () => console.log("Aborted");
+  const confirmDelete = useConfirm("Are you sure". deleteWorld, abort);
   return (
     <div className="App">
-      <h1 ref={title}>Hi</h1>      
-      {/* 주어진 reference를 title에 줬다. */}
+      <button onClick={confirmDelete}>
+        Delete the world
+      </button>
     </div>
   );
 }
