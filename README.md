@@ -72,3 +72,8 @@
 # 2.5 useFadeIn
 1> 하나의 이벤트를 자동으로 서서히 나타나게 만드는 hook
 2> 애니매이션을 hook에 포함시키는 방법
+
+# 2.5 useNetwork
+1> navigator가 online 또는 offline이 되는걸 막아주는 것.
+2> network 상태가 바뀔 때마다 function을 부르는 hook
+3>
