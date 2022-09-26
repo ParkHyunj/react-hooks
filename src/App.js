@@ -1,17 +1,29 @@
 import React, { useState } from "react";
 import './App.css';
 
-const useInput = initialValue => {
+const useInput = (initialValue, validator) => {
   const [ value, setValue ] = useState(initialValue);
   const onChange = event => {
-    console.log(event.target);
+    const{
+      target: { value }
+    } = event;
+    let willUpdate = true;
+    if(typeof validator ==="fnction"){
+      willUpdate = validator(value);
+    }
+    // validator의 타입이 함수면 willUpdate에 validator의 결과를 업로드한다.
+    if(willUpdate){
+      setValue(value);
+    }
   };
   return { value, onChange };
 };
 
 function App() {
-  
-  const name = useInput("Mr.");
+
+  const maxLen = (value) => value.length <= 10;
+  // 여기서, validator -> value -> maxLen이다.
+  const name = useInput("Mr.", maxLen);
 
   return (
     <div className="App">

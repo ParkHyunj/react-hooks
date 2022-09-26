@@ -13,3 +13,9 @@
 2> <input placeholder="Name" /> => 박스 안에 Name으로 생성
 3> value={name.value} onChange={name.onChange} => {...name}으로 나타낼 수 있다.
 4> 독립된 함수 한 개를 만들어서 useState로 매개체 역할
+
+# 1.2 useInput(part 2)
+1>
+2>
+#>
+4>
