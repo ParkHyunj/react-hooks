@@ -73,7 +73,7 @@
 1> 하나의 이벤트를 자동으로 서서히 나타나게 만드는 hook
 2> 애니매이션을 hook에 포함시키는 방법
 
-# 2.5 useNetwork
+# 2.5 useNetwor k
 1> navigator가 online 또는 offline이 되는걸 막아주는 것.
 2> network 상태가 바뀔 때마다 function을 부르는 hook
 
@@ -89,3 +89,11 @@
 1> 알람이 실행되는 function
 2> default => 모든 알람이 허용되지 않는다. => 사용자의 선택을 알 수 없어서 browser는 value가 denied 된 것처럼 행동한다.
 3> 버튼을 누르면, chrome 알림이 뜬다.
+
+# 2.8 useAxios
+1> axios 
+    => http request를 만드는 것(npm을 이용하여 다운로드 가능한)
+    => default url을 설정하거나 자동으로 헤더를 설정하는 것을 허용
+2> console 창에 new Date(), Date.now{}를 하면 임의의 숫자 생성
+3> Refetch button을 누르면, setTrigger가 발동되고, trigger가 업데이트 되서 useEffect의 dependency인 trigger로 인해 useEffect가 다시 실행된다.
+4> &&를 쓸 때, a && b에서 true 값이 있으면 결과적으로 항상 두 번째 값인 b를 얻는다.
