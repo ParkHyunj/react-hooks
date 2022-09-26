@@ -59,3 +59,7 @@
     Line 9:8:  Unexpected use of 'confirm'  no-restricted-globals
     Search for the keywords to learn more about each error.
     => confirm(message)-> window.confirm(message)으로 변경하면 됨.
+
+# 2.3 usePreventLeave
+1> 보통 웹사이트에서 window 창을 닫을 때, "아직 저장하지 않았다"라고 창이 뜨게끔 구현.
+2> beforeunload는 window가 닫히기 전에 function이 실행되는걸 허락한다.
