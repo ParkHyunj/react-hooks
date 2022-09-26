@@ -1,23 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import './App.css';
-import useFullscreen from "./usefullscreen";
+import useNotification from "./usenotification";
 
 function App() {
 
-  const { element, triggerFull, exitFull } = useFullscreen();
+  const triggerNotif = useNotification("Can I steal your kimchi?")
 
   return (
     <div className="App" style={{ height: "1000vh"}}>
-      <img 
-        ref={element}
-        src="https://i.ibb.co/R6RwNxx/grape.jpg" alt="grape" width="250"
-      />
-      <button onClick={exitFull}>
-        Exit fullscreen
+      <button onClick={triggerNotif}>
+        Hello
       </button>
-      <button onClick={triggerFull}>
-        Make fullscreen
-      </button>
+    
 
     </div>
   );

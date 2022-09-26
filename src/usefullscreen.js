@@ -1,4 +1,3 @@
-import { isElementType } from '@testing-library/user-event/dist/utils';
 import React, { useEffect, useState, useRef, useCallback } from  'react';
 
 function useFullscreen() {

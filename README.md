@@ -82,5 +82,10 @@
 2> style={{ height: "1000vh"}} => 스크롤을 하게끔 화면 구성
 3> console.log({"y", window.scrollY, "x", window.scrollX});
 
-# 2.7 useFullscreen
+# 2.6 useFullscreen
 1> 버튼을 눌렀을 때, 해당 이미지를 전체 화면으로 전환시키는 hook
+
+# 2.7 useNotification
+1> 알람이 실행되는 function
+2> default => 모든 알람이 허용되지 않는다. => 사용자의 선택을 알 수 없어서 browser는 value가 denied 된 것처럼 행동한다.
+3> 버튼을 누르면, chrome 알림이 뜬다.
