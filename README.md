@@ -32,3 +32,22 @@
 2> setTimeout(() => titleUpdater("Home"), 5000);
     => 5초 후에 loading에서 Home으로 제목이 바뀐다.
 3> titleUpdater에는 setTitle()이라는 함수가 담겨있다.
+
+# 2.2 useClick
+1> const input = useRef();
+    => reference는 component의 어떤 부분을 선택할 수 있는 방법
+    => document.getElementByID()를 사용한 것과 동일
+2> setTimeout(() => console.log(potato.current), 5000)
+3> function App() {
+    const potato = useRef();
+    setTimeout(() => potato.current.focus(), 5000);
+    return (
+        <div className="App">
+            <div>Hi</div>
+            <input ref={potato} placeholder="la" />
+        </div> );}
+   export default App;
+4> Uncaught TypeError: Cannot read properties of undefined (reading 'focus') at App.js:5:1
+    => 개발자 도구에서 console 창 누르면 이런 오류 생김 
+    => 오류 발생 이유: mount가 너무 빨리되서 potato.current가 극 초반에 존재하지 않아서 / console.log 해보면 초반에 undefined가 뜨다가 제대로 잡힌다.
+5> 글씨를 눌렀을 때, say hello가 나오게 구현.
