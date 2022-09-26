@@ -1,40 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
-
-const content = [
-  {
-    tab: "Section 1",
-    content: "I'm the content of the Section 1"
-  },
-  {
-    tab: "Section 2",
-    content: "I'm the content of the Section 2"
-  }
-];
-
-const useTabs = (initialTab, allTabs) => {
-  const [currentIndex, setcurrentIndex] = useState(initialTab);
-  if (!allTabs || !Array.isArray(allTabs)) {
-  return;
-  }
-  // 배열이 아닐 때, return하는 것이다.
-  return {  
-    currentItem : allTabs[currentIndex],
-    changeItem : setcurrentIndex
-  };
-  };
 
 function App() {
 
-  const { currentItem, changeItem } = useTabs(1, content);
+  const sayHello = () => console.log("hello");
+  const [ number, setNumber ] = useState(0);
+  const [ aNumber, setAnumber ] = useState(0);
+  useEffect(sayHello, [number]); 
+  // number가 바뀔때만 sayHello 함수 실행
+
   return (
     <div className="App">
-      {content.map((section, index) => ( 
-        <button onClick={() => changeItem(index)}>
-            {section.tab}
-        </button>
-      ))}
-      <div>{currentItem.content}</div> 
+      <div>Hi</div>
+      <button onClick={() => setNumber(number +1)}>
+        {number} 
+        {/* number를 업데이트 */}
+      </button>
+      <button onClick={() => setAnumber(aNumber +1)}>
+        {aNumber} 
+        {/* anumber을 업데이트 */}
+      </button>
     </div>
   );
 }

@@ -20,3 +20,9 @@
 3> initialTab은 usetTabs -> useState -> currentIndex
 4> setcurrentIndex -> changeItem
 5> allTabs는 currentItem으로
+
+# 2.0 useEffect
+1> useEffect는 2개의 인자를 받는데, 첫 번째는 function으로써의 결과, 두 번째는 dependency
+1> useEffect()는 componentDidMount(), componentDidUpdate(), componentWillUnmount() 의 역할을 한다.
+2> useEffect()의 1번째 인자는 function으로서의 effct ==> componentDidMount()와 기능이 비슷함)
+3> useEffect()의 2번쨰 인자는 deps(dependency)으로써, useEffect()가 deps리스트에 있는 값이 변할 때만 실행되게 함 ==> componentDidUpdate()와 기능이 비슷함
