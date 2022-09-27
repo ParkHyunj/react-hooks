@@ -97,3 +97,17 @@
 2> console 창에 new Date(), Date.now{}를 하면 임의의 숫자 생성
 3> Refetch button을 누르면, setTrigger가 발동되고, trigger가 업데이트 되서 useEffect의 dependency인 trigger로 인해 useEffect가 다시 실행된다.
 4> &&를 쓸 때, a && b에서 true 값이 있으면 결과적으로 항상 두 번째 값인 b를 얻는다.
+
+# 2.10
+1> 자신의 패키지를 publish하기
+2> npm init -> package name: (react-hooks) 다음에 @nooks/use-title라고 쓰기
+3> 이후로 쓸거 쓰고, enter로 넘어가다가 license (ISC)에서 MIT라 쓰기
+4> package.json에서 "main": "index.js"는 다른 사람들이 설치해야 하기 때문에 꼭 있어야 한다.
+5> dependencies => peerDependencies로 바꾸기 : 요구되지만, 설치할 필요가 없다는 뜻
+6> npmjs.com에 들어가서 프로필에서 add organization 누르기
+7> name에 마음대로 쓰고, create 버튼 누르기
+8> 터미널에 npm login 치기
+9> npmjs.com에서는 username : hyunjinpark으로 치기
+10> password는 쳐도 눈으로는 안보이므로 주의해서 치기
+11> package.json에서 "private": true 지우고, npm publish --access public실행
+12> https://www.npmjs.com/package/@developer567/use-title

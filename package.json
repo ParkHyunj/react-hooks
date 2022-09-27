@@ -1,8 +1,7 @@
 {
-  "name": "react-hooks",
+  "name": "@developer567/use-title",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "peerDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -35,5 +34,25 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "1> react의 state machine에 연결하는 기본적인 방법 2> 함수형 프로그램을 권장한다. 3> hook이 생기기 전에 state를 함수형 component에 사용할 수 없었다.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParkHyunj/react-hooks.git"
+  },
+  "keywords": [
+    "react",
+    "react",
+    "hooks",
+    "title",
+    "hooks"
+  ],
+  "author": "hyunjin Park",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ParkHyunj/react-hooks/issues"
+  },
+  "homepage": "https://github.com/ParkHyunj/react-hooks#readme"
 }
