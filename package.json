@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,7 +39,6 @@
   },
   "description": "1> react의 state machine에 연결하는 기본적인 방법 2> 함수형 프로그램을 권장한다. 3> hook이 생기기 전에 state를 함수형 component에 사용할 수 없었다.",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ParkHyunj/react-hooks.git"
@@ -54,5 +55,8 @@
   "bugs": {
     "url": "https://github.com/ParkHyunj/react-hooks/issues"
   },
-  "homepage": "https://github.com/ParkHyunj/react-hooks#readme"
+  "homepage": "https://ParkHyunj.github.io/react-hooks",
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }

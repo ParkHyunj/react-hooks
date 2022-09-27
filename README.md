@@ -111,3 +111,13 @@
 10> password는 쳐도 눈으로는 안보이므로 주의해서 치기
 11> package.json에서 "private": true 지우고, npm publish --access public실행
 12> https://www.npmjs.com/package/@developer567/use-title
+
+# 배포
+1> npm install --save gh-pages
+2> package.json에서 "homepage": "https://ParkHyunj.github.io/reat-hooks" 추가
+3> "scripts" 하위에
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
+4> npm run build
+5> npm run deploy
+6> 터미널에 Published가 뜨면 성공.
