@@ -1,21 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import './App.css';
-import useAxios from "./useaxios";
+import React from 'react';
+import Notification from './pages/Notification';
+import PreventLeave from './pages/PreventLeave';
+import Axios from './pages/Axios';
 
-function App() {
-
-  const { loading, data, error, refetch } = useAxios({
-    url: "https://yts.mx/api/v2/list_movies.json"
-  });
-  console.log('Loading: ${loading}\nError:${error}\nData:${JSON.stringfy(data) }');
-
+function App(){
   return (
-    <div className="App" style={{ height: "1000vh"}}>
-      <h1>{data && data.status}</h1>
-      <h2>{loading && "Loading"}</h2>
-      <button onClick={refetch}>
-        Refetch
-      </button>
+    <div>
+      <h1>react-hooks 실습예제입니다.</h1>
+      <p>1. useNotification <Notification /></p>
+      <p>2. usePreventLeave <PreventLeave /></p>
+      <p>3. useAxios <Axios /></p>        
     </div>
   );
 }
